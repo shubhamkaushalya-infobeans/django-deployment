@@ -1,0 +1,29 @@
+{% extends 'cbv_app/header.html' %}
+{% block body_block %}
+<h1>School Details Page</h1>
+{% if school_detail_view %}
+<ol>
+    <li><h3>{{school_detail_view.name}}</h3></li>
+    <li><h3>{{school_detail_view.location}}</h3></li>
+    <li><h3>{{school_detail_view.principal}}</h3></li>
+{% endif %}
+</ol>
+{% endblock %}
+
+{% block student_block %}
+<h3>student list</h3>
+<ul>
+   {% for all_student in school_detail_view.students_item.all %}
+        <li><b>{{all_student.name}}</b></li>
+   {% endfor %}
+</ul>
+
+
+<h1>Update School</h1>
+<div class="container">
+    <p><a class='btn btn-warning' href="{% url 'cbv_app_name:school-update' pk=school_detail_view.id %}">Update</a></p>
+    <p><a class='btn btn-danger' href="{% url 'cbv_app_name:school-delete' pk=school_detail_view.id %}">Delete</a></p>
+</div>
+
+
+{% endblock %}

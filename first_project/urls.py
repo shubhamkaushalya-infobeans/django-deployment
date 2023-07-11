@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('contact-us/',views.contactUs, name='contact-page'),
     path('sign-up/',views.sign_up, name='signup-page'),
-    path('basic-app/',include('basic_app.urls'))
+    path('basic-app/',include('basic_app.urls')),
+    path('cbv-app/',include('cbv_app.urls'))
 ]

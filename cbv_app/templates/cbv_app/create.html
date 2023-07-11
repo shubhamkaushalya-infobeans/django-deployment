@@ -1,0 +1,9 @@
+{% extends 'cbv_app/header.html' %}
+{% block body_block %}
+<h2>School Creation Page</h2>
+<form method="post" action="">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input class="bt btn-primary" type="Submit" value="Submit">
+</form>
+{% endblock %}

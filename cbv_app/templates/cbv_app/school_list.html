@@ -1,0 +1,11 @@
+{% extends 'cbv_app/header.html' %}
+{% block body_block %}
+<h1>List of Schools</h1>
+{% if school_details %}
+<ul>
+{% for details in school_details %}
+    <li><h3><a href="{% url 'cbv_app_name:school-details-page' details.id %}">{{details.name}}</a></h3></li>
+{% endfor %}
+{% endif %}
+</ul>
+{% endblock %}
